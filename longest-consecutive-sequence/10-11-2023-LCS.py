@@ -6,6 +6,7 @@ def longestConsecutive(self, nums: [int]) -> int:
     longest = 0
 
     for num in number_set:
+        # prev number
         if num - 1 not in number_set:
             current_num = num
             streak = 1
