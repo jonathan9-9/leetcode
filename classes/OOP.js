@@ -64,7 +64,8 @@ const canSayPhrase = (obj) => {
   obj.sayPhrase = () => console.log(`Now ${obj.name} can say a phrase`);
 };
 canSayPhrase(dog2);
-dog2.sayPhrase(); // Output: "Now Pearl can say a phrase"
+dog2.sayPhrase(); // Output: "Now Pearl can say a phrase" AKA object composition; more flexibility in how we can change methods
+// by defining the method in a higher class and creating separate function for any sub-classes that may need that method
 
 dog2.sayPhrase(); // Output: I love food! // Parameter-based polymorphism
 
