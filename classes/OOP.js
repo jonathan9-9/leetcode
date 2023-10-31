@@ -60,19 +60,31 @@ const dog2 = new Dog("Pearl", "I love food!", 3, 25);
 const cat1 = new Cat("Milo", "Meow!", 7, 7);
 const hamster1 = new Hamster("Squishy", "Squeak!", 2, 5);
 
-dog2.sayPhrase(); // output: I love food! // Parameter-based polymorphism
-cat1.sayPhrase(); // output: Meow!
+const canSayPhrase = (obj) => {
+  obj.sayPhrase = () => console.log(`Now ${obj.name} can say a phrase`);
+};
+canSayPhrase(dog2);
+dog2.sayPhrase(); // Output: "Now Pearl can say a phrase"
 
-cat1.console.log(dog1.name); // the output will be: "Oreo"
-cat1.nineLives(); // output: I have nine lives
+dog2.sayPhrase(); // Output: I love food! // Parameter-based polymorphism
+
+const catSayPhrase = (obj) => {
+  obj.sayPhrase = () =>
+    console.log(`${obj.name} can say something else besides Meow!`);
+};
+catSayPhrase(cat1);
+cat1.sayPhrase(); // Output: "Milo can say something else besides Meow!"
+
+cat1.console.log(dog1.name); // the Output will be: "Oreo"
+cat1.nineLives(); // Output: I have nine lives
 
 const cat3 = new Cat("Milo", "Meow", 8, 78);
 cat3.affection(); // Output: My level of affection is 8
 console.log(cat3.love); // Output: 8
 
 const cat4 = new Cat("Milo", "Meow", 10, 70);
-cat4.move(); // output: I am moving at the speed of 70
-console.log(cat4.speed); //output: 70
+cat4.move(); // Output: I am moving at the speed of 70
+console.log(cat4.speed); //Output: 70
 
 // Encapsulation (public method accessed in another class)
 const cat7 = new Cat("Feline", "I want food", 8, 55, 20);
