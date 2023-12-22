@@ -7,6 +7,7 @@ var setZeroes = function (matrix) {
   const cols = matrix[0].length;
   let firstRowHasZero = false;
 
+  // stop looping if we encounter 0 in the first row
   for (let j = 0; j < cols; j++) {
     if (matrix[0][j] === 0) {
       firstRowHasZero = true;
@@ -14,6 +15,7 @@ var setZeroes = function (matrix) {
     }
   }
 
+  // skip first row go to second starting at index 1
   for (let i = 1; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       if (matrix[i][j] === 0) {
@@ -23,6 +25,7 @@ var setZeroes = function (matrix) {
     }
   }
 
+  // first column
   for (let i = 1; i < rows; i++) {
     if (matrix[i][0] === 0) {
       for (let j = 0; j < cols; j++) {
@@ -31,6 +34,7 @@ var setZeroes = function (matrix) {
     }
   }
 
+  // loop through everything else
   for (let j = 0; j < cols; j++) {
     if (matrix[0][j] === 0) {
       for (let i = 0; i < rows; i++) {
@@ -39,6 +43,7 @@ var setZeroes = function (matrix) {
     }
   }
 
+  // first row
   if (firstRowHasZero) {
     for (let j = 0; j < cols; j++) {
       matrix[0][j] = 0;
