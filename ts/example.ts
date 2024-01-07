@@ -11,10 +11,3 @@ type Musician2 = {
   dateOfBirth: number;
   isPopular?: boolean;
 };
-
-interface Musician3 {
-  name: string;
-  age: string | number;
-  dateOfBirth: number;
-  isPopular?: boolean;
-}
