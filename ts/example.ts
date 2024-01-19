@@ -1,13 +1,8 @@
-type Musician1 = {
-  name: string;
-  age: string | number;
-  dateOfBirth: number;
-  isPopular?: boolean;
+const sumAll = (arrayIntegers: number[]) => {
+  arrayIntegers.reduce((acc, currValue) => {
+    return acc + currValue;
+  }, 0);
 };
 
-type Musician2 = {
-  name: string;
-  age: string | number;
-  dateOfBirth: number;
-  isPopular?: boolean;
-};
+let numbers = [5, 2, 9, 19];
+console.log(sumAll(numbers));
