@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+// LC problem implementing binary search
 var findPeakElement = function (nums) {
   let left = 0;
   let right = nums.length - 1;
