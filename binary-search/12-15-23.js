@@ -21,6 +21,8 @@ var search = function (nums, target, left = 0, right = nums.length - 1) {
   }
 };
 
+// binary search: while loop & recursion
+
 // Iteratively
 
 /**
