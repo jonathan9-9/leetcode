@@ -1,6 +1,15 @@
-type ApiResponse<Data> = {
+// generics with api responses; here data must always be an object
+
+type ApiResponse<Data extends object> = {
   isError: boolean;
   data: Data;
+};
+
+const response: ApiResponse<{ name: string }> = {
+  isError: false,
+  data: {
+    name: "JWT token",
+  },
 };
 
 // index signatures; alternative to index signatures is using type instead of interface because interfaces
