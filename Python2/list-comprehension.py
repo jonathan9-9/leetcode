@@ -20,6 +20,20 @@
 # for i in range(10):
 #     print(fibonacci(i))
 
+# ------
+
+# binary_search_recursive takes four parameters: the sorted array arr, the
+#  target element target, and the low and high indices of
+# the current search interval.
+# If the low index becomes greater than the high index, it means the target
+# element is not present in the array, so it returns -1.
+# Otherwise, it calculates the mid index of the current search interval and
+#  checks if the element at the mid index is equal to the target.
+# If the element is found, it returns the index of the element.
+# If the element is not found, it recursively searches in either the left or
+# right half of the array, depending on whether the target is less than or
+# greater than the element at the mid index.
+
 
 def binary_search(arr, target):
     return binary_search_recursive(arr, target, 0, len(arr) - 1)
