@@ -47,3 +47,46 @@ if result != -1:
     print(f"Element {target} found at index {result}.")
 else:
     print(f"Element {target} not found in the array.")
+
+# -------
+
+
+def find_path(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    return find_path_recursive(matrix, rows, cols, 0, 0)
+
+
+def find_path_recursive(matrix, rows, cols, row, col):
+    # Base case: If reached the bottom-right corner
+    if row == rows - 1 and col == cols - 1:
+        return [[row, col]]
+
+    # Check if current cell is blocked or out of bounds
+    if row >= rows or col >= cols or matrix[row][col] == 1:
+        return None
+
+    # Try moving right
+    right_path = find_path_recursive(matrix, rows, cols, row, col + 1)
+    if right_path is not None:
+        return [[row, col]] + right_path
+
+    # Try moving down
+    down_path = find_path_recursive(matrix, rows, cols, row + 1, col)
+    if down_path is not None:
+        return [[row, col]] + down_path
+
+    # If both right and down movements are not possible
+    return None
+
+
+# Test the function
+matrix = [[0, 1, 0, 0], [0, 0, 1, 0], [1, 0, 0, 0], [0, 1, 0, 0]]
+
+path = find_path(matrix)
+if path:
+    print("Path found:")
+    for row, col in path:
+        print(f"({row}, {col})")
+else:
+    print("No path found.")
