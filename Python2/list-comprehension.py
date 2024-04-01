@@ -62,7 +62,7 @@ if result != -1:
 else:
     print(f"Element {target} not found in the array.")
 
-# -------
+# ------
 
 
 def find_path(matrix):
