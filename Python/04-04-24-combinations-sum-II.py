@@ -12,7 +12,8 @@ class Solution:
         def backtrack(start, candidates, combinations, target):
             if target < 0:
                 return
-
+            # base case: if target equals zero we have
+            # found our complement from target sum
             if target == 0:
                 # create copy of current combinations array
                 result.append(combinations[:])
@@ -32,6 +33,11 @@ class Solution:
         return result
 
 
-# [3,2,5,1,5,2,6,4] target = 7
+candidates = [1, 2, 3, 4, 5, 10, 8]
+target = 10
 
-# result = [[2,5], [1,6], [3,4]]
+solution = Solution()
+
+res = solution.combinationSum2(candidates, target)
+
+print(f"OUTPUT: {res}")
