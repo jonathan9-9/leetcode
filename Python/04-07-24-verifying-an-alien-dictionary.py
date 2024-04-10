@@ -13,10 +13,7 @@ class Solution:
             ):
                 return False
             for char_prev_word, char_next_word in zip(prev_word, next_word):
-                # break here; we have found previous word to be
-                # in lexicographic order with its
-                # consecutive word in the sequence
-                # the index of prev word is less than the index of next word
+
                 if (
                     order_string_lookup[char_prev_word]
                     < order_string_lookup[char_next_word]
