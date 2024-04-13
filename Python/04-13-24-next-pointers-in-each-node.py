@@ -16,7 +16,7 @@ class Node:
         self.next = next
 
 
-class Solution:
+class IterativeSolution:
     def connect(self, root: "Optional[Node]") -> "Optional[Node]":
         if not root:
             return root
@@ -39,4 +39,34 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
+        return root
+
+
+# alternate solution with recursion
+
+
+class RecursiveSolution:
+    def connect(self, root: "Optional[Node]") -> "Optional[Node]":
+        if not root:
+            return root
+
+        def join_nodes(node, level):
+
+            if not node:
+                return
+
+            if level >= len(levels):
+                levels.append(None)
+
+            if levels[level]:
+                levels[level].next = node
+
+            levels[level] = node
+
+            join_nodes(node.left, level + 1)
+            join_nodes(node.right, level + 1)
+
+        levels = []
+        join_nodes(root, 0)
+
         return root
