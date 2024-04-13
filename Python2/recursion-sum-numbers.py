@@ -3,7 +3,7 @@ def sum_numbers(n):
         return 0
 
     else:
-        return n % 10 + sum_numbers(int(n // 2))
+        return n % 10 + sum_numbers(int(n // 10))
 
 
-print(sum_numbers(596))
+print(sum_numbers(1037))
