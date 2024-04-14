@@ -1,16 +1,36 @@
 from typing import List
 
 
+# Optimized Solution
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
 
-        n = len(nums)
+        result = [0] * len(nums)
 
-        arr = [0] * n
+        i, j = 0, len(nums) - 1
+        for end in reversed(range(len(nums))):
+            arr_i = nums[i] ** 2
+            arr_j = nums[j] ** 2
+            if arr_i > arr_j:
+                result[end] = arr_i
+                i += 1
+            else:
+                result[end] = arr_j
+                j -= 1
 
-        for i in range(n):
-            arr[i] = pow(nums[i], 2)
+        return result
 
-        arr.sort(reverse=False)
 
-        return arr
+# class Solution:
+#     def sortedSquares(self, nums: List[int]) -> List[int]:
+
+#         n = len(nums)
+
+#         arr = [0] * n
+
+#         for i in range(n):
+#             arr[i] = pow(nums[i], 2)
+
+#         arr.sort(reverse=False)
+
+#         return arr
