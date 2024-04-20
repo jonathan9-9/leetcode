@@ -1,5 +1,5 @@
 def monotonic_array(array):
-    # write code here
+
     if len(array) == 0:
         return True
 
@@ -19,3 +19,6 @@ def monotonic_array(array):
             if array[i] > array[i + 1]:
                 return False
     return True
+
+
+# monotonic array increasing and decreasing order
