@@ -24,6 +24,8 @@ class Solution:
 
         while heap:
 
+            # underscore here could represent the index of the node in the
+            # heap but used as a placeholder
             val, _, node = heapq.heappop(heap)
 
             current.next = ListNode(val)
