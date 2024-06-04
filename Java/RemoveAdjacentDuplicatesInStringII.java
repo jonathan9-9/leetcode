@@ -2,7 +2,7 @@ import java.util.*;
 
 public class RemoveAdjacentDuplicatesInStringII {
 
-    public String removeDuplicates(String s, int k) {
+    public static String removeDuplicates(String s, int k) {
         Stack<Map.Entry<Character, Integer>> stack = new Stack<>();
 
         for (char c : s.toCharArray()) {
@@ -28,6 +28,11 @@ public class RemoveAdjacentDuplicatesInStringII {
         }
 
         return removedDuplicateString.toString();
+    }
+
+    public static void main(String[] args) {
+        String result = RemoveAdjacentDuplicatesInStringII.removeDuplicates("pqqqprrsssppp", 3);
+        System.out.println(result);
     }
 
 }
