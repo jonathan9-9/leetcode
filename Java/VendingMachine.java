@@ -69,6 +69,9 @@ public class VendingMachine {
         int quarter = amtChangeOwed / QUARTER_AMT;
         amtChangeOwed %= QUARTER_AMT;
 
+        int dime = amtChangeOwed / DIME_AMT;
+        amtChangeOwed %= DIME_AMT;
+
     }
 
     public static void checkNegative(double number) {
