@@ -89,6 +89,18 @@ public class VendingMachine {
         if (one > 0) {
             System.out.println("     " + one + "One(s)");
         }
+        if (quarter > 0) {
+            System.out.println("     " + quarter + "Quarter(s)");
+        }
+        if (dime > 0) {
+            System.out.println("     " + dime + "Dime(s)");
+        }
+        if (nickel > 0) {
+            System.out.println("     " + nickel + "Nickel(s)");
+        }
+        if (penny > 0) {
+            System.out.println("     " + penny + "Penny(ies)");
+        }
     }
 
     public static void checkNegativeNumbers(double number) {
