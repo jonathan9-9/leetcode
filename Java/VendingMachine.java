@@ -25,8 +25,8 @@ public class VendingMachine {
             System.out.println("Enter the amount of money inserted: ");
             userAmtPaid = input.nextDouble();
 
-            checkNegative(totCostOfItem);
-            checkNegative(userAmtPaid);
+            checkNegativeNumbers(totCostOfItem);
+            checkNegativeNumbers(userAmtPaid);
 
             int totCostInCents = (int) Math.round(totCostOfItem * 100);
             int userAmtPaidInCents = (int) Math.round(userAmtPaid * 100);
@@ -74,9 +74,11 @@ public class VendingMachine {
 
         int nickel = amtChangeOwed / NICKEL_AMT;
         amtChangeOwed %= NICKEL_AMT;
+
+        int penny = amtChangeOwed / PENNY_AMT;
     }
 
-    public static void checkNegative(double number) {
+    public static void checkNegativeNumbers(double number) {
         if (number < 0) {
             throw new IllegalArgumentException(number + "is an invalid entry");
         }
