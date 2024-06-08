@@ -36,7 +36,7 @@ public class VendingMachine {
             if (userAmtPaidInCents < totCostInCents) {
                 System.out.print("Amount paid is less than total cost of item(s).");
             } else {
-                System.out.print("You are owed: $" + changeOwedInCents / 100.0 + " in change.");
+                System.out.print("You are owed: $" + changeOwedInCents / 100.0 + " in change. \n");
             }
 
             computeExactChange(changeOwedInCents);
@@ -76,6 +76,19 @@ public class VendingMachine {
         amtChangeOwed %= NICKEL_AMT;
 
         int penny = amtChangeOwed / PENNY_AMT;
+
+        if (twenty > 0) {
+            System.out.println("     " + twenty + "Twenty(ies)");
+        }
+        if (ten > 0) {
+            System.out.println("     " + ten + "Ten(s)");
+        }
+        if (five > 0) {
+            System.out.println("     " + five + "Five(s)");
+        }
+        if (one > 0) {
+            System.out.println("     " + one + "One(s)");
+        }
     }
 
     public static void checkNegativeNumbers(double number) {
