@@ -53,7 +53,7 @@ public class VendingMachine {
 
     public static void computeExactChange(int amtChangeOwed) {
 
-        // 5d, 1, quarter, dime, nickel, penny
+        // 5d, 1d, quarter, dime, nickel, penny
         int twenty = amtChangeOwed / TWENTY_BILL;
         amtChangeOwed %= TWENTY_BILL;
 
@@ -77,6 +77,9 @@ public class VendingMachine {
 
         int penny = amtChangeOwed / PENNY_AMT;
 
+        // if (amtChangeOwed == 0) {
+        // System.out.println("No change owed");
+        // } else {
         if (twenty > 0) {
             System.out.println("     " + twenty + " Twenty(ies)");
         }
@@ -101,6 +104,7 @@ public class VendingMachine {
         if (penny > 0) {
             System.out.println("     " + penny + " Penny(ies)");
         }
+        // }
     }
 
     public static void checkNegativeNumbers(double number) {
