@@ -72,6 +72,8 @@ public class VendingMachine {
         int dime = amtChangeOwed / DIME_AMT;
         amtChangeOwed %= DIME_AMT;
 
+        int nickel = amtChangeOwed / NICKEL_AMT;
+        amtChangeOwed %= NICKEL_AMT;
     }
 
     public static void checkNegative(double number) {
