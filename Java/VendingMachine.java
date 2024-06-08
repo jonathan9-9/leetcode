@@ -53,8 +53,12 @@ public class VendingMachine {
 
     public static void computeExactChange(int amtChangeOwed) {
 
+        // 5d, 1, quarter, dime, nickel, penny
         int twenty = amtChangeOwed / TWENTY_BILL;
         amtChangeOwed %= TWENTY_BILL;
+
+        int ten = amtChangeOwed / TEN_BILL;
+        amtChangeOwed %= TEN_BILL;
 
     }
 
