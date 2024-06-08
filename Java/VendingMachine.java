@@ -63,6 +63,12 @@ public class VendingMachine {
         int five = amtChangeOwed / FIVE_BILL;
         amtChangeOwed %= FIVE_BILL;
 
+        int one = amtChangeOwed / ONE_BILL;
+        amtChangeOwed %= ONE_BILL;
+
+        int quarter = amtChangeOwed / QUARTER_AMT;
+        amtChangeOwed %= QUARTER_AMT;
+
     }
 
     public static void checkNegative(double number) {
