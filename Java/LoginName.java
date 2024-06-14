@@ -41,10 +41,12 @@ public class LoginName {
             int lastDigit = Integer.valueOf(digit) % 10;
 
             if (firstName.length() < 6) {
-                System.out.println("Your login name: " + firstName + firstCharLastName + "_" + lastDigit);
+                System.out.println("Your login name: " + firstName + firstCharLastName + "_"
+                        + lastDigit);
             } else {
                 firstName = userInfo.substring(0, 6);
-                System.out.println("Your login name: " + firstName + firstCharLastName + "_" + lastDigit);
+                System.out.println("Your login name: " + firstName + firstCharLastName + "_"
+                        + lastDigit);
             }
         } catch (NumberFormatException e) {
 
@@ -52,4 +54,27 @@ public class LoginName {
         }
 
     }
+
+    // public static void main(String[] args) {
+    // try (Scanner scanner = new Scanner(System.in)) {
+    // String userInfo = scanner.nextLine();
+
+    // String[] userParts = userInfo.split(" ");
+
+    // String firstName = userParts[0];
+    // char lastNameFirstChar = userParts[1].charAt(0);
+    // int numbers = Integer.valueOf(userParts[2]);
+    // int lastDigit = numbers % 10;
+
+    // if (firstName.length() < 6) {
+    // System.out.println("Your login name: " + firstName + lastNameFirstChar + "_"
+    // + lastDigit);
+    // } else {
+    // firstName = firstName.substring(0, 6);
+    // System.out.println("Your login name: " + firstName + lastNameFirstChar + "_"
+    // + lastDigit);
+    // }
+    // }
+
+    // }
 }
