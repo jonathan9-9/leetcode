@@ -17,12 +17,8 @@ public class M03Homework {
 
             if (!cityName.isEmpty()) {
                 System.out.println("Enter the two-letter state abbreviation: ");
-                String stateAbbrev = scanner.nextLine();
-                if (stateAbbrev.length() == 2 &&
-                        ((Character.isUpperCase(stateAbbrev.charAt(0)) && Character.isUpperCase(stateAbbrev.charAt(1)))
-                                ||
-                                (Character.isLowerCase(stateAbbrev.charAt(0))
-                                        && Character.isLowerCase(stateAbbrev.charAt(1))))) {
+                String stateAbbrev = scanner.nextLine().toUpperCase();
+                if (stateAbbrev.length() == 2) {
                     System.out.println("Enter a 5-digit zip code");
                     String zipCode = scanner.nextLine();
                     switch (stateAbbrev) {
@@ -79,3 +75,9 @@ public class M03Homework {
 
     }
 }
+
+// ((Character.isUpperCase(stateAbbrev.charAt(0)) &&
+// Character.isUpperCase(stateAbbrev.charAt(1)))
+// ||
+// (Character.isLowerCase(stateAbbrev.charAt(0))
+// && Character.isLowerCase(stateAbbrev.charAt(1))))
