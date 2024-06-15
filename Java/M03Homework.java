@@ -75,9 +75,3 @@ public class M03Homework {
 
     }
 }
-
-// ((Character.isUpperCase(stateAbbrev.charAt(0)) &&
-// Character.isUpperCase(stateAbbrev.charAt(1)))
-// ||
-// (Character.isLowerCase(stateAbbrev.charAt(0))
-// && Character.isLowerCase(stateAbbrev.charAt(1))))
