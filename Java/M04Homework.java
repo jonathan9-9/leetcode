@@ -28,7 +28,10 @@ public class M04Homework {
         final int MAX_ATTEMPTS = 6;
         int attempts = 0;
 
-        char[] secretWordChars = secretWord.toCharArray();
+        char[] secretWordChars = new char[secretWord.length()];
+        for (int i = 0; i < secretWord.length(); i++) {
+            secretWordChars[i] = secretWord.charAt(i);
+        }
 
         while (attempts < MAX_ATTEMPTS) {
             System.out.println("Please enter your word guess: ");
