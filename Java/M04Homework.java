@@ -42,7 +42,7 @@ public class M04Homework {
             attempts++;
 
             if (wordGuessed.equals(secretWord)) {
-                System.out.println("Winner! You have guessed the right word: " + secretWord);
+                System.out.println("Winner! You have guessed the correct word: " + secretWord);
                 return;
             }
 
