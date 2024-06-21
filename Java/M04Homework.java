@@ -1,13 +1,32 @@
 import java.util.*;
 
+/**
+ * Program implements guessing game logic to allow user to guess a word and
+ * check if word matches a random generated secret word from array of
+ * pre-defined words
+ */
+
 public class M04Homework {
 
     /**
+     * Default constructor for M04Homework.
+     * This constructor is automatically provided by Java if no other constructors
+     * are defined.
+     * It doesn't perform any actions and is provided for completeness of
+     * documentation.
+     */
+    public M04Homework() {
+        // Default constructor: Does not do anything, but included javadoc comment for
+        // completeness of documentation
+    }
+
+    /**
      * main method of the program where execution starts
-     * 
+     *
      * @param args main method accepts an array of type string for any arguments
      *             passed by value
      */
+
     public static void main(String[] args) {
         List<String> secretWordOptions = List.of(
                 "amber", "blaze", "coral", "fable", "glide",
@@ -32,9 +51,7 @@ public class M04Homework {
      * The guessingGame method is the bulk of the program; it
      * guides the user to guess a word and
      * check if their word matches the secret word
-     */
-
-    /**
+     *
      *
      * @param secretWord parameter accepts a randomly generated secret word into the
      *                   guessingGame method
@@ -82,8 +99,6 @@ public class M04Homework {
 
     /**
      * Method checks for matching characters between two words
-     */
-    /**
      *
      * @param wordGuessed     the user-defined guessed word all lowercase to ignore
      *                        capitalization
