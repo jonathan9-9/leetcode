@@ -1,6 +1,13 @@
 import java.util.*;
 
 public class M04Homework {
+
+    /**
+     * main method of the program where execution starts
+     * 
+     * @param args main method accepts an array of type string for any arguments
+     *             passed by value
+     */
     public static void main(String[] args) {
         List<String> secretWordOptions = List.of(
                 "amber", "blaze", "coral", "fable", "glide",
@@ -20,6 +27,19 @@ public class M04Homework {
         guessingGame(secretWord);
 
     }
+
+    /**
+     * The guessingGame method is the bulk of the program; it
+     * guides the user to guess a word and
+     * check if their word matches the secret word
+     */
+
+    /**
+     *
+     * @param secretWord parameter accepts a randomly generated secret word into the
+     *                   guessingGame method
+     *
+     */
 
     public static void guessingGame(String secretWord) {
         @SuppressWarnings("resource")
@@ -59,6 +79,20 @@ public class M04Homework {
         }
         System.out.println("Sorry, better luck next time. Thanks for playing.");
     }
+
+    /**
+     * Method checks for matching characters between two words
+     */
+    /**
+     *
+     * @param wordGuessed     the user-defined guessed word all lowercase to ignore
+     *                        capitalization
+     * @param secretWordChars this parameter is an array of each character within
+     *                        the secret word array that was created from the
+     *                        randomly generated secret word
+     * @return method returns a string that contains all the matching characters
+     *         between secret word and user-defined word guessed
+     */
 
     public static String checkMatchedChars(String wordGuessed, char[] secretWordChars) {
         String matchedChars = "";

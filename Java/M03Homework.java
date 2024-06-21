@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class M03Homework {
     public static void main(String[] args) {
 
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the address validator!");
