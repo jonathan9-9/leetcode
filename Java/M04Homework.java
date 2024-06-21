@@ -6,6 +6,8 @@ import java.util.*;
  * pre-defined words
  */
 
+// CLI Javadoc command: javadoc -d [add directory-name]
+// [add-source-code-file-name]
 public class M04Homework {
 
     /**
