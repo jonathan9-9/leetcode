@@ -5,7 +5,7 @@ public class M05Homework {
     public final String[] ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
     public final String[] tens = { "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
             "Ninety" };
-    public final String[] teens = { "", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+    public final String[] teens = { "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
             "Eighteen", "Nineteen" };
 
     public static void main(String[] args) {
@@ -58,6 +58,7 @@ public class M05Homework {
     }
 
     public void printSong(int numBottles) {
+        int initialBottles = numBottles;
         while (numBottles > 0) {
             String currentBottles = numberOfBottles(numBottles);
             String oneLessBottle = numberOfBottles(numBottles - 1);
@@ -65,7 +66,7 @@ public class M05Homework {
             System.out.println(currentBottles + " bottle" + (numBottles == 1 ? "" : "s") + " of beer on the wall, "
                     + currentBottles.toLowerCase() + " bottle" + (numBottles == 1 ? "" : "s") + " of beer");
             System.out.println("Take one down and pass it around, " + oneLessBottle.toLowerCase() + " bottle"
-                    + ((numBottles - 1) == 1 ? "" : (numBottles - 1) == 0 ? "s" : "") + " of beer on the wall");
+                    + ((numBottles - 1) == 1 ? "" : "s") + " of beer on the wall");
             System.out.println();
 
             numBottles--;
@@ -81,6 +82,7 @@ public class M05Homework {
 
         System.out.println();
         System.out.println("No more bottles of beer on the wall, no more bottles of beer");
-        System.out.println("Go to the store and buy some more, " + numBottles + " bottles of beer on the wall");
+        System.out.println("Go to the store and buy some more, " + numberOfBottles(initialBottles).toLowerCase()
+                + " bottles of beer on the wall");
     }
 }
