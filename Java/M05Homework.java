@@ -52,7 +52,12 @@ public class M05Homework {
             if (onesPlace == 0) {
                 return tens[tensPlace];
             } else {
-                return tens[tensPlace] + "-" + ones[onesPlace];
+                if (!(number <= 9)) {
+
+                    return tens[tensPlace] + "-" + ones[onesPlace];
+                } else {
+                    return ones[onesPlace];
+                }
             }
         }
     }
