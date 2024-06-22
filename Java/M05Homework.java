@@ -38,8 +38,23 @@ public class M05Homework {
         return (number >= 1) && (number <= 99);
     }
 
-    public static String numberOfBottles(int number) {
-        return "Hi";
+    public String numberOfBottles(int number) {
+        if (number == 0) {
+            return "No more";
+        } else if (number == 1) {
+            return "One";
+        } else if (number >= 11 && number <= 19) {
+            return teens[number - 11];
+        } else {
+            int tensPlace = number / 10;
+            int onesPlace = number % 10;
+
+            if (onesPlace == 0) {
+                return tens[tensPlace];
+            } else {
+                return tens[tensPlace] + "-" + ones[onesPlace];
+            }
+        }
     }
 
     public void printSong(int numBottles) {
