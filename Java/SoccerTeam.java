@@ -82,12 +82,17 @@ public class SoccerTeam {
             return "Traditional 11-player soccer team";
         } else {
             return "Invalid number of players";
+
         }
     }
 
     public double calculateCurrentWinningAvg(int numGamesWon, int numGamesLost) {
         double winningAverage;
         int gamesPlayed = numGamesLost + numGamesWon;
+
+        if (gamesPlayed == 0) {
+            return 0.0;
+        }
         winningAverage = (double) numGamesWon / gamesPlayed;
         return winningAverage;
     }
@@ -119,7 +124,12 @@ public class SoccerTeam {
     }
 
     public String toString() {
-        String s = "lol";
+        String s = "Team Name: " + soccerTeamName
+                + "\n\t Team Type: " + teamType(numSoccerPlayers)
+                + "\n\t Games Won: " + gamesWon
+                + "\n\t Games Lost: " + gamesLost
+                + "\n\t Uniform Color: " + uniformColor;
+
         return s;
     }
 
