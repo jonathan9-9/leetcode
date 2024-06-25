@@ -21,8 +21,6 @@ public class Driver {
 
         book1.setTitle(userBookTitle1);
         book1.setAuthor(userBookAuthor1);
-        book1.getBookTitle();
-        book1.getBookAuthors();
 
         System.out.println(book1.toString());
 
