@@ -18,7 +18,7 @@ public class STDriver {
         SoccerTeam soccerTeam = null;
 
         while (selection != QUIT) {
-            System.out.println(CREATE_TEAM + ". Provide team information");
+            System.out.println("\n" + CREATE_TEAM + ". Provide team information");
             System.out.println(SHOW_TEAM_SUMMARY + ". Show team summary");
             System.out.println(SHOW_CURRENT_WINNING_AVG + ". Show current winning average");
             System.out.println(SHOW_PROJECTED_WINNING_AVG + ". Show projected winning average");
@@ -36,15 +36,29 @@ public class STDriver {
                     String teamCaptain = scanner.nextLine();
                     System.out.println("Enter number of soccer players (team of 5 or 11): ");
                     int numPlayers = Integer.parseInt(scanner.nextLine());
+                    if (numPlayers != 5 && numPlayers != 11) {
+                        System.out.println("Invalid number of players: must be either 5 or 11");
+                        return;
+                    }
+
                     System.out.println("Enter games won: ");
+
                     int matchesWon = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter games lost: ");
                     int matchesLost = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Provide uniform color: ");
-                    String jerseyColor = scanner.nextLine();
 
-                    soccerTeam = new SoccerTeam(teamName, numPlayers, teamCaptain, matchesWon, matchesLost,
-                            jerseyColor);
+                    if (matchesWon + matchesLost <= 10) {
+                        System.out.println("Provide uniform color: ");
+                        String jerseyColor = scanner.nextLine();
+
+                        soccerTeam = new SoccerTeam(teamName, numPlayers, teamCaptain, matchesWon, matchesLost,
+                                jerseyColor);
+                    } else {
+                        System.out.println("Total number of games played (won + lost) cannot exceed " +
+                                SoccerTeam.TOTAL_GAMES_IN_TOURNAMENT);
+                        return;
+                    }
+
                     break;
                 case SHOW_TEAM_SUMMARY:
                     if (soccerTeam != null) {
@@ -56,10 +70,11 @@ public class STDriver {
                 case SHOW_CURRENT_WINNING_AVG:
                     if (soccerTeam != null) {
                         double winningAverage = soccerTeam.calculateCurrentWinningAvg();
-                        System.out.println("Current winning average: " + winningAverage);
+                        System.out.printf("Current winning average: %.2f\n", winningAverage);
                     } else {
                         System.out.println("No team information available");
                     }
+                    break;
                 case SHOW_PROJECTED_WINNING_AVG:
                     if (soccerTeam != null) {
                         double projectedWinningAverage = soccerTeam.projectedWinningAverage();
@@ -67,13 +82,20 @@ public class STDriver {
                     } else {
                         System.out.print("No team information available");
                     }
+                    break;
                 case SHOW_TEAM_ANNOUNCEMENT:
                     if (soccerTeam != null) {
                         System.out.println("TEAM ANNOUNCEMENT: " + soccerTeam.teamAnnouncement());
                     } else {
                         System.out.print("No team information available");
                     }
+                    break;
                 case QUIT:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid selection. Please try again.");
+                    break;
             }
         }
     }

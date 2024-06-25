@@ -1,6 +1,6 @@
 public class SoccerTeam {
 
-    private final int TOTAL_GAMES_IN_TOURNAMENT = 10;
+    public static final int TOTAL_GAMES_IN_TOURNAMENT = 10;
 
     private String soccerTeamName;
     private int numSoccerPlayers;
@@ -21,6 +21,10 @@ public class SoccerTeam {
 
     }
 
+    public boolean isTotalGamesValid(int numWon, int numLost) {
+        return (gamesWon + gamesLost) <= TOTAL_GAMES_IN_TOURNAMENT;
+    }
+
     public void setTeamName(String teamName) {
         soccerTeamName = teamName;
     }
@@ -35,15 +39,21 @@ public class SoccerTeam {
         teamCaptainName = captainName;
     }
 
+    // Handle edge case:
+
     public void setGamesWon(int numGamesWon) {
-        if (numGamesWon >= 0 && TOTAL_GAMES_IN_TOURNAMENT <= 10) {
+        if (numGamesWon >= 0 && isTotalGamesValid(gamesWon, gamesLost)) {
             gamesWon = numGamesWon;
+        } else {
+            System.out.println("Invalid number of games won. Total games exceed limit of 10.");
         }
     }
 
     public void setGamesLost(int numGamesLost) {
-        if (numGamesLost >= 0 && TOTAL_GAMES_IN_TOURNAMENT <= 10) {
+        if (numGamesLost >= 0 && isTotalGamesValid(gamesWon, gamesLost)) {
             gamesLost = numGamesLost;
+        } else {
+            System.out.println("Invalid number of games lost. Total games exceed limit of 10.");
         }
     }
 
@@ -88,7 +98,7 @@ public class SoccerTeam {
 
     public double calculateCurrentWinningAvg() {
         double winningAverage;
-        int gamesPlayed = gamesLost + gamesLost;
+        int gamesPlayed = gamesLost + gamesWon;
 
         if (gamesPlayed == 0) {
             return 0.0;
@@ -115,7 +125,7 @@ public class SoccerTeam {
             message = "Your team has won at least half its matches. Your team's projected winning average: "
                     + projectedWinningAverage();
         } else if (calculateCurrentWinningAvg() >= 0) {
-            message = "Your team has not won many games yet :(";
+            message = "Your team is not performing well in this season's tournament. :(";
         } else {
             message = "Your team has not played any games so far";
         }
