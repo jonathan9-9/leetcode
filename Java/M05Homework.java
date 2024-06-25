@@ -17,10 +17,10 @@ public class M05Homework {
 
         while (true) {
             System.out.println("How many bottles of beer? Enter a number between 1 and 99 (inclusive): ");
-            String input = scanner.nextLine();
+            // String input = scanner.nextLine();
 
             try {
-                userNumber = Integer.parseInt(input);
+                userNumber = Integer.parseInt(scanner.nextLine());
                 if (validateNumber(userNumber)) {
                     break;
                 } else {
