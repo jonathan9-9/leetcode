@@ -36,13 +36,13 @@ public class SoccerTeam {
     }
 
     public void setGamesWon(int numGamesWon) {
-        if (numGamesWon >= 0) {
+        if (numGamesWon >= 0 && TOTAL_GAMES_IN_TOURNAMENT <= 10) {
             gamesWon = numGamesWon;
         }
     }
 
     public void setGamesLost(int numGamesLost) {
-        if (numGamesLost >= 0) {
+        if (numGamesLost >= 0 && TOTAL_GAMES_IN_TOURNAMENT <= 10) {
             gamesLost = numGamesLost;
         }
     }
@@ -86,35 +86,35 @@ public class SoccerTeam {
         }
     }
 
-    public double calculateCurrentWinningAvg(int numGamesWon, int numGamesLost) {
+    public double calculateCurrentWinningAvg() {
         double winningAverage;
-        int gamesPlayed = numGamesLost + numGamesWon;
+        int gamesPlayed = gamesLost + gamesLost;
 
         if (gamesPlayed == 0) {
             return 0.0;
         }
-        winningAverage = (double) numGamesWon / gamesPlayed;
+        winningAverage = (double) gamesWon / gamesPlayed;
         return winningAverage;
     }
 
-    public double projectedWinningAverage(int numGamesWon, int numGamesLost) {
-        int gamesPlayed = numGamesLost + numGamesWon;
+    public double projectedWinningAverage() {
+        int gamesPlayed = gamesLost + gamesWon;
         int gamesRemaining = TOTAL_GAMES_IN_TOURNAMENT - (gamesPlayed);
 
-        int projectedTotalWins = numGamesWon + gamesRemaining;
+        int projectedTotalWins = gamesWon + gamesRemaining;
         double projectedWinningAverage = (double) projectedTotalWins / TOTAL_GAMES_IN_TOURNAMENT;
         return projectedWinningAverage;
     }
 
-    public String teamAnnouncement(int numGamesWon, int numGamesLost) {
+    public String teamAnnouncement() {
         String message = "";
-        if (calculateCurrentWinningAvg(numGamesWon, numGamesLost) > 0.7) {
+        if (calculateCurrentWinningAvg() > 0.7) {
             message = "Congratulations, your team has a high winning average and its projected winning average is: "
-                    + projectedWinningAverage(numGamesWon, numGamesLost);
-        } else if (calculateCurrentWinningAvg(numGamesWon, numGamesLost) >= 0.5) {
+                    + projectedWinningAverage();
+        } else if (calculateCurrentWinningAvg() >= 0.5) {
             message = "Your team has won at least half its matches. Your team's projected winning average: "
-                    + projectedWinningAverage(numGamesWon, numGamesLost);
-        } else if (calculateCurrentWinningAvg(numGamesWon, numGamesLost) >= 0) {
+                    + projectedWinningAverage();
+        } else if (calculateCurrentWinningAvg() >= 0) {
             message = "Your team has not won many games yet :(";
         } else {
             message = "Your team has not played any games so far";
@@ -125,6 +125,7 @@ public class SoccerTeam {
 
     public String toString() {
         String s = "Team Name: " + soccerTeamName
+                + "\n\t Team Captain: " + teamCaptainName
                 + "\n\t Team Type: " + teamType(numSoccerPlayers)
                 + "\n\t Games Won: " + gamesWon
                 + "\n\t Games Lost: " + gamesLost
