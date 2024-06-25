@@ -29,4 +29,24 @@ public class SoccerTeam {
         }
     }
 
+    public void setCaptainName(String captainName) {
+        teamCaptainName = captainName;
+    }
+
+    public void setGamesWon(int numGamesWon) {
+        if (numGamesWon >= 0) {
+            gamesWon = numGamesWon;
+        }
+    }
+
+    public void setGamesLost(int numGamesLost) {
+        if (numGamesLost >= 0) {
+            gamesLost = numGamesLost;
+        }
+    }
+
+    public void setUniformColor(String jerseyColor) {
+        uniformColor = jerseyColor;
+    }
+
 }
