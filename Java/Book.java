@@ -7,9 +7,9 @@ public class Book {
     private int numPages;
 
     public Book(String bookTitle, String author, int numPages) {
-        bookTitle = "The Lost Land of the Future";
-        author = "Sam & Jin & Mark";
-        numPages = 724;
+        this.bookTitle = bookTitle;
+        this.author = author;
+        this.numPages = numPages;
     }
 
     public void setTitle(String titleOfBook) {
@@ -66,9 +66,9 @@ public class Book {
         return isBookLong(LONG_BOOK_PAGE_NUMBER);
     }
 
-    public String toString(String str) {
+    public String toString() {
         return "The book of " + getBookTitle() + " written by " + getBookAuthors()
-                + " is about a tale of when the land of Europe came to ruin after a major battle between two kings "
+                + " is about a tale of when the land of Europe came to ruin after a major battle between two kings"
                 + " fighting for power and sovereignty. This battle was ongoing for decades until one power united and killed thousands of people and severely damaged infrastructure";
     }
 

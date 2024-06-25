@@ -17,8 +17,12 @@ public class Driver {
         System.out.println("Enter number of pages of book #one: ");
         int numPagesBook1 = Integer.parseInt(scanner.nextLine());
 
+        System.out.println(book1.isBookLong(numPagesBook1));
+
         book1.setTitle(userBookTitle1);
         book1.setAuthor(userBookAuthor1);
+        book1.getBookTitle();
+        book1.getBookAuthors();
 
         System.out.println(book1.toString());
 
@@ -27,8 +31,6 @@ public class Driver {
         book2.setAuthor(userBookAuthor2);
         int numAuthors = book2.countAuthors(userBookAuthor2);
         System.out.println("Book #two author count: " + numAuthors);
-
-        System.out.println(book1.isBookLong(numPagesBook1));
 
     }
 }
