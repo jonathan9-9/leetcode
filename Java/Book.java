@@ -7,9 +7,9 @@ public class Book {
     private int numPages;
 
     public Book(String bookTitle, String author, int numPages) {
-        this.bookTitle = bookTitle;
-        this.author = author;
-        this.numPages = numPages;
+        setTitle(bookTitle);
+        setAuthor(author);
+        setNumPages(numPages);
     }
 
     public void setTitle(String titleOfBook) {
