@@ -116,6 +116,10 @@ public class SoccerTeam {
         return projectedWinningAverage;
     }
 
+    public void welcomeMessage() {
+        System.out.println("Welcome to the league " + soccerTeamName + "!");
+    }
+
     public String teamAnnouncement() {
         String message = "";
         if (calculateCurrentWinningAvg() > 0.7) {

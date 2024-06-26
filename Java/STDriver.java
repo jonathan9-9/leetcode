@@ -63,6 +63,7 @@ public class STDriver {
                 case SHOW_TEAM_SUMMARY:
                     if (soccerTeam != null) {
                         System.out.println(soccerTeam);
+                        soccerTeam.welcomeMessage();
                     } else {
                         System.out.println("No team information available.");
                     }
