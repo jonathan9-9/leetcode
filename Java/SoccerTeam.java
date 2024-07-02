@@ -22,7 +22,7 @@ public class SoccerTeam {
     }
 
     public boolean isTotalGamesValid(int numWon, int numLost) {
-        return (gamesWon + gamesLost) <= TOTAL_GAMES_IN_TOURNAMENT;
+        return (numWon + numLost) <= TOTAL_GAMES_IN_TOURNAMENT;
     }
 
     public void setTeamName(String teamName) {
