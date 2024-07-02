@@ -28,7 +28,7 @@ public class M08LotteryWinners {
             if (numWinners < NUMBER_ONE) {
                 System.out.println("The number of winners cannot be less than 1.");
             } else {
-                System.out.println("The number of winner cannot exceed the number of tickets sold.");
+                System.out.println("The number of winners cannot exceed the number of tickets sold.");
             }
             System.out.println("How many winners?");
             numWinners = Integer.parseInt(scnr.nextLine());
