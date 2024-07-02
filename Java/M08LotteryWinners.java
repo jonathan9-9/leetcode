@@ -35,13 +35,13 @@ public class M08LotteryWinners {
 
     public static void validateLotteryDetails(int numTicketsSold, int numWinners) {
         int[] winningNums = new int[numWinners];
-        boolean[] seen = new boolean[numTicketsSold];
+        boolean[] seen = new boolean[numTicketsSold + 1];
 
-        for (int i = 0; i < numTicketsSold; i++) {
+        for (int i = 0; i < numWinners; i++) {
             boolean hasBeenSeen = false;
 
             while (!hasBeenSeen) {
-                int randomNum = (int) (Math.random() * numTicketsSold);
+                int randomNum = (int) (Math.random() * numTicketsSold) + 1;
                 if (!seen[randomNum]) {
                     winningNums[i] = randomNum;
                     hasBeenSeen = true;
@@ -50,9 +50,18 @@ public class M08LotteryWinners {
                 }
             }
         }
-        System.out.println("The winners are: ");
+        System.out.print("The winners are: [");
         for (int i = 0; i < numWinners; i++) {
-            System.out.print("[" + winningNums[i] + " " + "]");
+            System.out.print(winningNums[i]);
+            if (i < numWinners - 1) {
+                System.out.print(",");
+            }
+
+            if (i < numWinners - 1) {
+                System.out.print(" ");
+            }
+
         }
+        System.out.print("]");
     }
 }
