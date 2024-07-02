@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class M08LotteryWinners {
+
+    public static final int NUMBER_ONE = 1;
+
     public static void main(String[] args) {
         @SuppressWarnings("resource")
         Scanner scnr = new Scanner(System.in);
@@ -12,7 +15,7 @@ public class M08LotteryWinners {
         System.out.println("How many tickets were sold?");
         numTicketsSold = Integer.parseInt(scnr.nextLine());
 
-        while (numTicketsSold < 1) {
+        while (numTicketsSold < NUMBER_ONE) {
             System.out.println("Invalid data. The number of tickets must be greater than or equal to 1.");
             System.out.println("How many tickets were sold?");
             numTicketsSold = Integer.parseInt(scnr.nextLine());
@@ -21,8 +24,8 @@ public class M08LotteryWinners {
         System.out.println("How many winners?");
         numWinners = Integer.parseInt(scnr.nextLine());
 
-        while (numWinners < 1 || numWinners > numTicketsSold) {
-            if (numWinners < 1) {
+        while (numWinners < NUMBER_ONE || numWinners > numTicketsSold) {
+            if (numWinners < NUMBER_ONE) {
                 System.out.println("The number of winners cannot be less than 1.");
             } else {
                 System.out.println("The number of winner cannot exceed the number of tickets sold.");
