@@ -49,7 +49,6 @@ public class M08LotteryWinners {
                     winningNums[i] = randomNum;
                     hasBeenSeen = true;
                     seen[randomNum] = true;
-
                 }
             }
         }
