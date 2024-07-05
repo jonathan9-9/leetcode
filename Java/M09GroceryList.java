@@ -50,8 +50,9 @@ public class M09GroceryList {
                         }
                         break;
                     case REMOVE_ITEM:
-
-                        for (int i = 0; i < groceryList.size(); i++) {
+                        if (groceryList.isEmpty()) {
+                            System.out.println("Grocery list is empty.");
+                        } else {
 
                             System.out.println("Enter the index of the item to remove.");
                             int itemToRemove = Integer.parseInt(scanner.nextLine());
@@ -61,8 +62,8 @@ public class M09GroceryList {
                             } else {
                                 System.out.println("Error: cannot remove item on invalid index.");
                             }
-
                         }
+
                         break;
                     default:
                         System.out.println("Input must be valid integer between 1 and 4");
