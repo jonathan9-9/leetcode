@@ -6,23 +6,23 @@ public class M08LotteryWinners {
 
     public static void main(String[] args) {
         @SuppressWarnings("resource")
-        Scanner scnr = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int numWinners = 0;
 
         int numTicketsSold = 0;
 
         System.out.println("How many tickets were sold?");
-        numTicketsSold = Integer.parseInt(scnr.nextLine());
+        numTicketsSold = Integer.parseInt(scanner.nextLine());
 
         while (numTicketsSold < NUMBER_ONE) {
             System.out.println("Invalid data. The number of tickets must be greater than or equal to 1.");
             System.out.println("How many tickets were sold?");
-            numTicketsSold = Integer.parseInt(scnr.nextLine());
+            numTicketsSold = Integer.parseInt(scanner.nextLine());
         }
 
         System.out.println("How many winners?");
-        numWinners = Integer.parseInt(scnr.nextLine());
+        numWinners = Integer.parseInt(scanner.nextLine());
 
         while (numWinners < NUMBER_ONE || numWinners > numTicketsSold) {
             if (numWinners < NUMBER_ONE) {
@@ -31,13 +31,13 @@ public class M08LotteryWinners {
                 System.out.println("The number of winners cannot exceed the number of tickets sold.");
             }
             System.out.println("How many winners?");
-            numWinners = Integer.parseInt(scnr.nextLine());
+            numWinners = Integer.parseInt(scanner.nextLine());
         }
         validateLotteryDetails(numTicketsSold, numWinners);
     }
 
     public static void validateLotteryDetails(int numTicketsSold, int numWinners) {
-        int[] winningNums = new int[numWinners];
+        int[] winningNumbers = new int[numWinners];
         boolean[] seen = new boolean[numTicketsSold + 1];
 
         for (int i = 0; i < numWinners; i++) {
@@ -46,7 +46,7 @@ public class M08LotteryWinners {
             while (!visited) {
                 int randomNum = (int) (Math.random() * numTicketsSold) + 1;
                 if (!seen[randomNum]) {
-                    winningNums[i] = randomNum;
+                    winningNumbers[i] = randomNum;
                     visited = true;
                     seen[randomNum] = true;
                 }
@@ -54,7 +54,7 @@ public class M08LotteryWinners {
         }
         System.out.print("The winners are: [");
         for (int i = 0; i < numWinners; i++) {
-            System.out.print(winningNums[i]);
+            System.out.print(winningNumbers[i]);
             if (i < numWinners - 1) {
                 System.out.print(",");
             }
