@@ -38,6 +38,7 @@ public class M08LotteryWinners {
 
     public static void validateLotteryDetails(int numTicketsSold, int numWinners) {
         int[] winningNumbers = new int[numWinners];
+        // example: [34 = false, 4 = true, 11 = false]
         boolean[] seen = new boolean[numTicketsSold + 1];
 
         for (int i = 0; i < numWinners; i++) {
