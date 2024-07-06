@@ -32,22 +32,13 @@ public class M09GroceryList {
                 switch (choice) {
                     case ADD_ITEM:
                         System.out.println("Enter an item to add: ");
-                        String itemToAdd = scanner.nextLine().trim().toLowerCase();
+                        String itemToAdd = scanner.nextLine().trim();
 
-                        boolean itemSeen = false;
-
-                        for (String item : groceryList) {
-                            if (item.equalsIgnoreCase(itemToAdd)) {
-                                itemSeen = true;
-                                break;
-                            }
-                        }
-
-                        if (itemSeen) {
-                            System.out.println("Item already exists. Item must be unique.");
+                        if (itemPresent(groceryList, itemToAdd)) {
+                            System.out.println("Item already exists.");
                         } else {
                             groceryList.add(itemToAdd);
-                            System.out.println("You have successfully added item to your list.");
+                            System.out.println("You successfully added an item.");
                         }
                         break;
                     case VIEW_LIST:
@@ -85,5 +76,14 @@ public class M09GroceryList {
                 System.out.println("Invalid input. Enter a valid number");
             }
         }
+    }
+
+    private static boolean itemPresent(ArrayList<String> itemsList, String item) {
+        for (String foodItem : itemsList) {
+            if (foodItem.equalsIgnoreCase(item)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
