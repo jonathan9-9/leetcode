@@ -20,7 +20,7 @@ public class M09GroceryList {
         int choice = 0;
 
         while (choice != EXIT) {
-            System.out.println("Enter 1 to add an item.");
+            System.out.println("\nEnter 1 to add an item.");
             System.out.println("Enter 2 view your list.");
 
             System.out.println("Enter 3 to remove an item.");
@@ -32,12 +32,22 @@ public class M09GroceryList {
                 switch (choice) {
                     case ADD_ITEM:
                         System.out.println("Enter an item to add: ");
-                        String itemToAdd = scanner.next().trim();
+                        String itemToAdd = scanner.nextLine().trim().toLowerCase();
 
-                        if (groceryList.contains(itemToAdd)) {
-                            System.out.println("Item entered already exists");
+                        boolean itemSeen = false;
+
+                        for (String item : groceryList) {
+                            if (item.equalsIgnoreCase(itemToAdd)) {
+                                itemSeen = true;
+                                break;
+                            }
+                        }
+
+                        if (itemSeen) {
+                            System.out.println("Item already exists. Item must be unique.");
                         } else {
                             groceryList.add(itemToAdd);
+                            System.out.println("You have successfully added item to your list.");
                         }
                         break;
                     case VIEW_LIST:
@@ -64,6 +74,9 @@ public class M09GroceryList {
                             }
                         }
 
+                        break;
+                    case EXIT:
+                        System.out.println("Exiting...");
                         break;
                     default:
                         System.out.println("Input must be valid integer between 1 and 4");
