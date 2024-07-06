@@ -42,14 +42,13 @@ public class M08LotteryWinners {
         boolean[] seen = new boolean[numTicketsSold + 1];
 
         for (int i = 0; i < numWinners; i++) {
-            boolean visited = false;
 
-            while (!visited) {
+            while (true) {
                 int randomNum = (int) (Math.random() * numTicketsSold) + 1;
                 if (!seen[randomNum]) {
                     winningNumbers[i] = randomNum;
-                    visited = true;
                     seen[randomNum] = true;
+                    break;
                 }
             }
         }
