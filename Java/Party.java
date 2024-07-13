@@ -18,4 +18,23 @@ public class Party {
     public List<String> getGuests() {
         return new ArrayList<>(guests);
     }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public boolean addGuest(String guest) {
+        return guests.add(guest);
+    }
+
+    public boolean removeGuest(String guest) {
+        Iterator<String> iterator = guests.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().equals(guest)) {
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
+    }
 }
