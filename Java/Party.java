@@ -53,7 +53,7 @@ public class Party {
         }
     }
 
-    public void showPartInformation() {
+    public void showPartyInformation() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy 'at' hh:mm a");
         String newDate = date.format(formatter);
         System.out.println("Date and time of party: " + newDate);
