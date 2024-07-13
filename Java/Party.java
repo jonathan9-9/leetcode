@@ -27,6 +27,10 @@ public class Party {
         return guests.add(guest);
     }
 
+    public int amountGuests() {
+        return guests.size();
+    }
+
     public boolean removeGuest(String guest) {
         Iterator<String> iterator = guests.iterator();
         while (iterator.hasNext()) {
@@ -36,5 +40,28 @@ public class Party {
             }
         }
         return false;
+    }
+
+    public boolean containsGuest(String guest) {
+        return guests.contains(guest);
+    }
+
+    public void showGuestList() {
+        Iterator<String> iterator = guests.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+    public void showPartInformation() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy 'at' hh:mm a");
+        String newDate = date.format(formatter);
+        System.out.println("Date and time of party: " + newDate);
+        System.out.println("Guest List:");
+        showGuestList();
+    }
+
+    public boolean didPartyOccur() {
+        return LocalDateTime.now().isAfter(date);
     }
 }
