@@ -2,14 +2,14 @@ import java.time.LocalDateTime;
 
 public class PartyDriver {
     public static void main(String[] args) {
-        Party party = new Party(LocalDateTime.of(2024, 07, 10, 17, 9, 45));
+        Party party = new Party(LocalDateTime.of(2024, 07, 14, 17, 9));
 
         System.out.println("Add guest Mark: " + party.addGuest("Mark"));
         System.out.println("Add Liz: " + party.addGuest("Liz"));
         System.out.println("Add Oliver: " + party.addGuest("Oliver"));
-        System.out.println("Add Oliver: " + party.addGuest("Yvette"));
-        System.out.println("Add Oliver: " + party.addGuest("Olivia"));
-        System.out.println("Add Oliver: " + party.addGuest("May"));
+        System.out.println("Add Yvette: " + party.addGuest("Yvette"));
+        System.out.println("Add Olivia: " + party.addGuest("Olivia"));
+        System.out.println("Add May: " + party.addGuest("May"));
 
         System.out.println("\n Party Information:");
         party.showPartyInformation();
