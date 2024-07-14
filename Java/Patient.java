@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Patient {
+    private static final double MAXIMUM_AMT_OWED = 1500.0;
+
     private int id;
     private String name;
     private ArrayList<DoctorVisit> visitList;
@@ -36,13 +38,40 @@ public class Patient {
         this.name = patientName;
     }
 
-    public void addDoctorVisit(DoctorVisit visit) {
-        this.visitList.add(visit);
+    public int getNumberOfVisits() {
+        return this.visitList.size();
+    }
+
+    public boolean hasAFollowUp() {
+        for (DoctorVisit visit : visitList) {
+            if (visit.isFollowUpRequired()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public double getTotalPaymentsOwed() {
+        double totalOwed = 0.0;
+
+        for (DoctorVisit visit : visitList) {
+            if (visit.patientPays()) {
+                totalOwed += visit.getAmountOwed();
+            }
+        }
+        return totalOwed;
+    }
+
+    public boolean addDoctorVisit(DoctorVisit visit) {
+        if (getTotalPaymentsOwed() <= MAXIMUM_AMT_OWED) {
+            return this.visitList.add(visit);
+        }
+        return false;
     }
 
     public String toString() {
         String stringResult = "Patient ID: " + this.id + "\nPatient Name: " + this.name + "\n Number of Doctor Visits: "
-                + this.visitList;
+                + getNumberOfVisits();
         return stringResult;
     }
 }
