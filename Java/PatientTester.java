@@ -24,19 +24,19 @@ public class PatientTester {
         Patient patientC = new Patient(345, "PatientC", visit1);
 
         // visit2: replace null with your value for full payment method
-        DoctorVisit visit2 = new DoctorVisit("flu", 100, null, false);
+        DoctorVisit visit2 = new DoctorVisit("flu", 100, PaymentMethod.INSURANCE_PAY, false);
 
         // visit3: replace null with your value for insurance payment method
-        DoctorVisit visit3 = new DoctorVisit("hip pain", 2500, null, false);
+        DoctorVisit visit3 = new DoctorVisit("hip pain", 2500, PaymentMethod.PAYMENT_PLAN, false);
 
         // visit4: replace null with your value for payment plan method
-        DoctorVisit visit4 = new DoctorVisit("earache", 500, null, true);
+        DoctorVisit visit4 = new DoctorVisit("earache", 500, PaymentMethod.INSURANCE_PAY, true);
 
         // visit5: replace null with your value for payment plan method
-        DoctorVisit visit5 = new DoctorVisit("broken ankle", 1400, null, true);
+        DoctorVisit visit5 = new DoctorVisit("broken ankle", 1400, PaymentMethod.PAYMENT_PLAN, true);
 
         // visit6: replace null with your value for full payment method
-        DoctorVisit visit6 = new DoctorVisit("store throat", 100, null, false);
+        DoctorVisit visit6 = new DoctorVisit("store throat", 100, PaymentMethod.FULL_PAY, false);
 
         patientA.addDoctorVisit(visit2);
         patientA.addDoctorVisit(visit3);
