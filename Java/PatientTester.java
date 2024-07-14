@@ -73,8 +73,11 @@ public class PatientTester {
                 + patientC.addDoctorVisit(visit6));
         System.out.println("PatientC number of visits:\n\tExpected=3\n\tActual  =" + patientC.getNumberOfVisits());
 
-        System.out.println("\nNumber of patients:\n\tExpected=3\n\tActual  ="); // YOU CONCATENATE THE METHOD CALL HERE
-                                                                                // TO CHECK!
+        System.out.println("\nNumber of patients:\n\tExpected=3\n\tActual  =" + Patient.getNumPatients()); // YOU
+                                                                                                           // CONCATENATE
+                                                                                                           // THE METHOD
+                                                                                                           // CALL HERE
+        // TO CHECK!
 
     }
 

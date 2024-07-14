@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Patient {
     private static final double MAXIMUM_AMT_OWED = 1500.0;
+    private static int numPatients = 0;
 
     private int id;
     private String name;
@@ -11,6 +12,7 @@ public class Patient {
         this.id = patientID;
         this.name = name;
         this.visitList = new ArrayList<DoctorVisit>();
+        numPatients++;
     }
 
     public Patient(int patientID, String name, DoctorVisit firstVisit) {
@@ -67,6 +69,10 @@ public class Patient {
             return this.visitList.add(visit);
         }
         return false;
+    }
+
+    public static int getNumPatients() {
+        return numPatients;
     }
 
     public String toString() {
