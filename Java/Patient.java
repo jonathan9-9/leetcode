@@ -39,4 +39,10 @@ public class Patient {
     public void addDoctorVisit(DoctorVisit visit) {
         this.visitList.add(visit);
     }
+
+    public String toString() {
+        String stringResult = "Patient ID: " + this.id + "\nPatient Name: " + this.name + "\n Number of Doctor Visits: "
+                + this.visitList;
+        return stringResult;
+    }
 }
