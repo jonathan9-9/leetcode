@@ -14,7 +14,7 @@ public class PatientTester {
         // replace the nulls below so you can run the driver!
 
         // visit1: replace null with your value for full payment method
-        DoctorVisit visit1 = new DoctorVisit("sore knee", 200, null, true);
+        DoctorVisit visit1 = new DoctorVisit("sore knee", 200, PaymentMethod.FULL_PAY, true);
         if (visit1.getPaymentMethod() == null) {
             System.err.println(
                     "ERROR! You must replace the nulls in your driver with the values of your enum in order to use the driver.");
