@@ -5,6 +5,8 @@ public class RotatedSortedArray {
         while (left <= right) {
             int mid = left + (right - left) / 2;
 
+            // 7, 3, 8, 1, 10, 4, 9
+
             if (numbers[mid] == target) {
                 return mid;
             }
