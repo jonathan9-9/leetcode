@@ -2,7 +2,7 @@ public class SmartAppliance {
     private String description;
     private String id;
     private int price;
-    private OperatingSystem os;
+    private OperatingSystem OS;
     private boolean voiceActivated;
 
     private static final boolean VOICE_ACTIVATED = true;
@@ -45,5 +45,21 @@ public class SmartAppliance {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public OperatingSystem getOS() {
+        return OS;
+    }
+
+    public boolean getVoiceActivated() {
+        return voiceActivated;
     }
 }
