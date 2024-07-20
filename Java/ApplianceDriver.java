@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class ApplianceDriver {
     public static void main(String[] args) {
@@ -16,5 +15,27 @@ public class ApplianceDriver {
         appliances
                 .add(new SmartAppliance("Smart MiniFridge", "5572", 2000, SmartAppliance.OperatingSystem.AMZ_ALEX_A,
                         false));
+
+        for (Appliance appliance : appliances) {
+
+            System.out.println("Appliance: " + appliance.toString());
+
+        }
+
+        SmartAppliance.OperatingSystem operatingSystem = SmartAppliance.OperatingSystem.APPLE_HOME_KIT;
+        int maxPrice = 700;
+
+        int count = 0;
+
+        for (Appliance appliance : appliances) {
+            if (appliance instanceof SmartAppliance) {
+                SmartAppliance smartAppliance = (SmartAppliance) appliance;
+                if (smartAppliance.canBeFeatured(operatingSystem, maxPrice)) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println("The number of smart appliances that can be featured are: " + count);
     }
 }
