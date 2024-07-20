@@ -11,11 +11,11 @@ public class SmartAppliance {
         AMZ_ALEX_A, APPLE_HOME_KIT, GOOGLE_ASSISTANT
     };
 
-    public SmartAppliance(String description, String id, int price, OperatingSystem os, boolean voiceActivated) {
+    public SmartAppliance(String description, String id, int price, OperatingSystem OS, boolean voiceActivated) {
         this.description = description;
         this.id = id;
         this.price = price;
-        this.os = os;
+        this.OS = OS;
         this.voiceActivated = voiceActivated;
     }
 
@@ -36,7 +36,7 @@ public class SmartAppliance {
     }
 
     public void setOS(OperatingSystem os) {
-        this.os = os;
+        this.OS = os;
     }
 
     public void setVoiceActivated(boolean voiceActivated) {
@@ -61,5 +61,12 @@ public class SmartAppliance {
 
     public boolean getVoiceActivated() {
         return voiceActivated;
+    }
+
+    public String toString() {
+        String output = description + "\n\t" +
+                "ID: " + id + "\t" + "Price: " + price + "\n\t" + "OS: " + OS + "\t" + "Voice-Activation: "
+                + voiceActivated;
+        return output;
     }
 }
