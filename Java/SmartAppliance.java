@@ -1,4 +1,4 @@
-public class SmartAppliance {
+public class SmartAppliance extends Appliance {
     private String description;
     private String id;
     private int price;
@@ -12,9 +12,7 @@ public class SmartAppliance {
     };
 
     public SmartAppliance(String description, String id, int price, OperatingSystem OS, boolean voiceActivated) {
-        this.description = description;
-        this.id = id;
-        this.price = price;
+        super(description, id, price);
         this.OS = OS;
         this.voiceActivated = voiceActivated;
     }
