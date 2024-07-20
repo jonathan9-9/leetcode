@@ -69,4 +69,15 @@ public class SmartAppliance {
                 + voiceActivated;
         return output;
     }
+
+    public boolean canBeFeatured(OperatingSystem OS, int maxPrice) {
+        if (getOS().equals(OS) && price <= maxPrice) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isCompatible(SmartAppliance applianceOne, SmartAppliance applianceTwo) {
+        return applianceOne.OS == applianceTwo.OS && applianceOne.voiceActivated == applianceTwo.voiceActivated;
+    }
 }
