@@ -16,9 +16,9 @@ public class FoodItemDriver {
 
         boolean isFrozen = false;
         for (FoodItem foodItem : foodItems) {
-            if (foodItem instanceof FoodItem) {
+            if (foodItem instanceof Dessert) {
                 Dessert dessert = (Dessert) foodItem;
-                if (dessert.getIsFrozen() == true) {
+                if (dessert.getIsFrozen()) {
                     isFrozen = true;
                 }
             }
@@ -28,7 +28,7 @@ public class FoodItemDriver {
         Collections.sort(foodItems);
 
         for (FoodItem foodItem : foodItems) {
-            if (foodItem instanceof FoodItem) {
+            if (foodItem instanceof Entree) {
                 Entree entree = (Entree) foodItem;
                 System.out.println("Cooking instructions per entree: " + entree.getInstructions());
             }
