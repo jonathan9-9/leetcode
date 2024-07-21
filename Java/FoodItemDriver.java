@@ -29,7 +29,8 @@ public class FoodItemDriver {
 
         for (FoodItem foodItem : foodItems) {
             if (foodItem instanceof FoodItem) {
-
+                Entree entree = (Entree) foodItem;
+                System.out.println("Cooking instructions per entree: " + entree.getInstructions());
             }
         }
     }
