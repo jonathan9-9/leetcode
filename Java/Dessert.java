@@ -1,32 +1,14 @@
 public class Dessert extends FoodItem {
 
-    private String foodName;
-    private int qty;
     private boolean isFrozen;
 
-    public Dessert(String foodName, int qty, boolean isFrozen) {
-        super(foodName, qty);
+    public Dessert(String food, int quantity, boolean isFrozen) {
+        super(food, quantity);
         this.isFrozen = isFrozen;
-    }
-
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-
-    public void setQty(int qty) {
-        this.qty = qty;
     }
 
     public void setIsFrozen(boolean isFrozen) {
         this.isFrozen = isFrozen;
-    }
-
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public int getQty() {
-        return qty;
     }
 
     public boolean getIsFrozen() {
@@ -44,13 +26,13 @@ public class Dessert extends FoodItem {
 
         Dessert dessert = (Dessert) obj;
 
-        return getQty() == dessert.getQty() &&
+        return getQuantity() == dessert.getQuantity() &&
                 getIsFrozen() == dessert.getIsFrozen() &&
                 getFood().equalsIgnoreCase(dessert.getFood());
     }
 
     public String toString() {
-        String s = foodName + " (" + qty + ")";
+        String s = getFood() + " (" + getQuantity() + ")";
 
         if (isFrozen) {
             s += " ***frozen***";
