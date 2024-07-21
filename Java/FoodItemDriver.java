@@ -8,7 +8,7 @@ public class FoodItemDriver {
         foodItems.add(new Dessert("Ice Cream", 2, true));
         foodItems.add(new Dessert("Cheese Cake", 2, false));
         foodItems.add(new Entree("Lasagna", 1,
-                "Preheat oven for 10 minutes, Prep and cook for 25 minutes at 375F, Let food cool for five minutes."));
+                "Preheat oven for 10 minutes, Prep and cook for 25 minutes at 375F, Let food cool for three minutes."));
 
         for (FoodItem foodItem : foodItems) {
             System.out.println("Food item: " + foodItem);
