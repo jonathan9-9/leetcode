@@ -80,4 +80,12 @@ public class Musician implements Comparable<Musician> {
         return this.artistName.compareTo(other.artistName);
     }
 
+    public void perform() {
+        System.out.println(artistName + " is performing and will be playing the " + instrumentPlayed + ".");
+    }
+
+    public void practice() {
+        System.out.println(artistName + " is practicing the " + instrumentPlayed + ".");
+    }
+
 }
