@@ -58,4 +58,26 @@ public class Musician implements Comparable<Musician> {
         return s;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || obj.getClass() != getClass()) {
+            return false;
+        }
+
+        Musician musician = (Musician) obj;
+        return age == musician.age &&
+                isMale == musician.isMale &&
+                artistName.equals(musician.artistName) &&
+                instrumentPlayed.equals(musician.instrumentPlayed);
+    }
+
+    @Override
+    public int compareTo(Musician other) {
+        return this.artistName.compareTo(other.artistName);
+    }
+
 }
