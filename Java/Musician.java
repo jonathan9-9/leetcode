@@ -1,4 +1,4 @@
-public class Musician {
+public class Musician implements Comparable<Musician> {
 
     protected int age;
     protected String artistName;
@@ -12,8 +12,14 @@ public class Musician {
         this.instrumentPlayed = instrumentPlayed;
     }
 
+    public Musician(String artistName, String instrumentPlayed) {
+        this(0, artistName, true, instrumentPlayed);
+    }
+
     public void setAge(int age) {
-        this.age = age;
+        if (age > 0) {
+            this.age = age;
+        }
 
     }
 
@@ -30,18 +36,26 @@ public class Musician {
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     public String getArtistName() {
-        return this.artistName;
+        return artistName;
     }
 
     public boolean getIsMale() {
-        return this.isMale;
+        return isMale;
     }
 
     public String getInstrumentPlayed() {
-        return this.instrumentPlayed;
+        return instrumentPlayed;
     }
+
+    @Override
+    public String toString() {
+        String s = "Musician: " + artistName + " (" + age + ", " + (isMale ? "Male" : "Female") + "), Instrument: "
+                + instrumentPlayed;
+        return s;
+    }
+
 }
