@@ -4,13 +4,20 @@ public class Band extends Musician {
     // Person class will contain: age, name of artist, gender, instrumentPlayed,
     // yearsOfPlaying
 
-    private static final int largeBandNumMembers = 7;
+    private static final int LARGE_BAND_NUM_MEMBERS = 7;
 
     private int numMusicians;
     private String bandName;
     private String genre;
     private String leadSingerName;
     private boolean isPerforming;
+    private static ArrayList<Band> bandList = new ArrayList<>();
+
+    public enum BandType {
+        ROCK, JAZZ, BLUES, POP
+    }
+
+    private BandType bandType;
 
     public Band(int age,
             String artistName, boolean isMale, String instrumentPlayed, int numMusicians, String bandName, String genre,
@@ -23,8 +30,6 @@ public class Band extends Musician {
         this.isPerforming = isPerforming;
 
     }
-
-    ArrayList<Musician> listOfMusicians = new ArrayList<>();
 
     public void setNumMusicians(int numMusicians) {
         this.numMusicians = numMusicians;
