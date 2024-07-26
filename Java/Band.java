@@ -71,16 +71,24 @@ public class Band extends Musician {
         return bandName;
     }
 
+    public void setBandType(BandType bandType) {
+        this.bandType = bandType;
+    }
+
     public String getGenre() {
         return genre;
     }
 
     public String getLeadSingerName() {
-        return this.leadSingerName;
+        return leadSingerName;
     }
 
     public boolean getIsPerforming() {
-        return this.isPerforming;
+        return isPerforming;
+    }
+
+    public BandType getBandType() {
+        return bandType;
     }
 
     public static boolean isBandLarge(int numMusicians) {
@@ -90,12 +98,17 @@ public class Band extends Musician {
         return false;
     }
 
+    public static ArrayList<Band> getAllBands() {
+        return bandList;
+    }
+
     public String toString() {
         String result = "Band Name: " + this.bandName
                 + "\n\t + Lead Singer: " + this.leadSingerName
                 + "\n\t + Genre: " + this.genre
                 + "\n\t + Number of Musicians: " + this.numMusicians
-                + "\n\t + Band Performing(T/F): " + this.isPerforming;
+                + "\n\t + Band Performing(T/F): " + this.isPerforming
+                + "\n\t + Band Type: " + bandType;
 
         return result;
     }
