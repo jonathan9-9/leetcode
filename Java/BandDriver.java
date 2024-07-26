@@ -8,5 +8,19 @@ public class BandDriver {
 
         Band band1 = new Band(34, "Jets", true, "Trumpet", 7, "Outsiders", "Rock", "Sam", true, Band.BandType.ROCK);
         Band band2 = new Band("Stuart", "Bass", "Blues");
+
+        System.out.println(band1);
+        System.out.println(band2);
+
+        musician1.perform();
+        musician2.practice();
+        band1.perform();
+        band2.releaseAlbum();
+
+        System.out.println(musician1.equals(musician2));
+        System.out.println(Band.isBandLarge(band1.getNumMusicians()));
+        System.out.println(band1.equals(band2));
+
+        System.out.println(Band.getAllBands());
     }
 }
