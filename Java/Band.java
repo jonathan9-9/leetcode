@@ -113,4 +113,32 @@ public class Band extends Musician {
         return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Band band = (Band) obj;
+        return isPerforming == band.isPerforming &&
+                numMusicians == band.numMusicians &&
+                bandName.equals(band.bandName) &&
+                genre.equals(band.genre) &&
+                bandType == band.bandType &&
+                leadSingerName.equals(band.leadSingerName);
+    }
+
+    @Override
+    public void perform() {
+        System.out.println(bandName + " is performing live in a few days.");
+    }
+
+    public void releaseAlbum() {
+        System.out.println(bandName + " is releasing a new album.");
+    }
+
 }
