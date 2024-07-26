@@ -21,14 +21,26 @@ public class Band extends Musician {
 
     public Band(int age,
             String artistName, boolean isMale, String instrumentPlayed, int numMusicians, String bandName, String genre,
-            String leadSingerName, boolean isPerforming) {
+            String leadSingerName, boolean isPerforming, BandType bandType) {
         super(age, artistName, isMale, instrumentPlayed);
         this.numMusicians = numMusicians;
         this.bandName = bandName;
         this.genre = genre;
         this.leadSingerName = leadSingerName;
         this.isPerforming = isPerforming;
+        this.bandType = bandType;
+        bandList.add(this);
 
+    }
+
+    public Band(String artistName, String instrumentPlayed, String bandName) {
+        super(artistName, instrumentPlayed);
+        this.bandName = bandName;
+        this.numMusicians = 0;
+        this.genre = "Unknown";
+        this.leadSingerName = "Unknown";
+        this.bandType = BandType.POP;
+        bandList.add(this);
     }
 
     public void setNumMusicians(int numMusicians) {
@@ -52,15 +64,15 @@ public class Band extends Musician {
     }
 
     public int getNumMusicians() {
-        return this.numMusicians;
+        return numMusicians;
     }
 
     public String getBandName() {
-        return this.bandName;
+        return bandName;
     }
 
     public String getGenre() {
-        return this.genre;
+        return genre;
     }
 
     public String getLeadSingerName() {
@@ -72,7 +84,7 @@ public class Band extends Musician {
     }
 
     public static boolean isBandLarge(int numMusicians) {
-        if (numMusicians >= largeBandNumMembers) {
+        if (numMusicians >= LARGE_BAND_NUM_MEMBERS) {
             return true;
         }
         return false;
