@@ -12,6 +12,7 @@ public class Musician implements Comparable<Musician> {
         this.instrumentPlayed = instrumentPlayed;
     }
 
+    // overloaded constructor
     public Musician(String artistName, String instrumentPlayed) {
         this(0, artistName, true, instrumentPlayed);
     }
