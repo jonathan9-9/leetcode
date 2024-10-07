@@ -26,6 +26,7 @@ int minObstaclesToRemove(vector<vector<char>> &board) {
 
   while (!myQ.empty()) {
     auto [row, col, obstaclesRemoved] = myQ.front();
+
     myQ.pop();
 
     if (row == rows - 1) {

@@ -3,14 +3,18 @@
 using namespace std;
 
 int main() {
-  unordered_map<int, string> hashMap;
+  unordered_map<string, int> ageMap;
+  ageMap["Alice"] = 25;
+  ageMap["Bob"] = 30;
+  ageMap["Charlie"] = 22;
 
-  hashMap[0] = "Apple";
-  hashMap[1] = "Orange";
-  hashMap[2] = "Watermelon";
+  std::string sub = std::string("aec").substr(2);
+  cout << "sub: " << sub << endl;
 
-  for (const auto &pair : hashMap) {
-    cout << "Key: " << pair.first << ", Value: " << pair.second << endl;
+  // Iterating through the unordered_map
+  for (const auto &pair : ageMap) {
+    cout << pair.first << ": " << pair.second << endl;
   }
+
   return 0;
 }
