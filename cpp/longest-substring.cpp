@@ -3,6 +3,7 @@
 #include <unordered_set>
 using namespace std;
 
+// Sliding window technique
 int lengthOfLongestSubstring(string s) {
   unordered_set<char> set;
 
