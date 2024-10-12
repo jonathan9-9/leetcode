@@ -12,6 +12,8 @@ bool isValid(std::string s) {
 
   for (char ch : s) {
     if (matching_brackets.count(ch)) {
+      // if stack is empty (no corresponding opening bracket) OR if '(' does not
+      // equal '(' then return false
       if (stack.empty() || stack.top() != matching_brackets[ch]) {
         return false;
       }
