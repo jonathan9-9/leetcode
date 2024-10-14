@@ -19,7 +19,7 @@ void reverseString(std::string &str) {
 
 int main() {
 
-  std::string s = "giselle"; // reversed: olleh
+  std::string s = "milo"; // reversed: olleh
 
   reverseString(s);
 
