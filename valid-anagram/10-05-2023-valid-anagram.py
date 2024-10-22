@@ -1,13 +1,27 @@
-def isAnagram(self, s: str, t: str) -> bool:
-    sHashMap, tHashMap = {}, {}
+# Given two strings s and t, return true if t is an
+# anagram
+#  of s, and false otherwise.
+
+def isAnagram(self, s, t):
+    s_char = {}
+    t_char = {}
+
     for char in s:
-        if char in sHashMap:
-            sHashMap[char] += 1
+        if char in s_char:
+            s_char[char] += 1
         else:
-            sHashMap[char] = 1
-    for letter in t:
-        if letter in tHashMap:
-            tHashMap[letter] += 1
+            s_char[char] = 1
+
+    for char in t:
+        if char in t_char:
+            t_char[char] += 1
         else:
-            tHashMap[letter] = 1
-    return sHashMap == tHashMap
+            t_char[char] = 1
+
+    return s_char == t_char
+
+
+s = "listen"
+t = "silent"
+
+print(isAnagram(None, s, t))  # Output: True
