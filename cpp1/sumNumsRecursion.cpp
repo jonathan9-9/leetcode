@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using std::cout, std::endl;
 
 int recursiveSum(int arr[], int size) {
   // Base case: If size is 0, return 0
