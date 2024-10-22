@@ -1,35 +1,55 @@
 # Implementation of Kadane's algorithm
 
-
 def maxProfit(self, prices: [int]) -> int:
+    left = 0    # buy
+    right = 1  # sell
     maxProfit = 0
-    R = 1  # sell
-    L = 0  # buy
-    while R < len(prices):
-        current = prices[R] - prices[L]
-        if prices[R] > prices[L]:
-            maxProfit = max(maxProfit, current)
+
+    while right < len(prices):
+        currentProfit = prices[right] - prices[left]
+
+        if prices[right] > prices[left]:
+            maxProfit = max(maxProfit, currentProfit)
+
         else:
-            L = R
-        R += 1
+            left = right
+
+        right += 1
+
     return maxProfit
+
+
+# O(n)
+# def maxProfit(self, prices: [int]) -> int:
+#     minPrice = float('inf')
+#     maxProfit = prices[0]
+
+#     for price in prices:
+#         if price < minPrice:
+#             minPrice = price
+#         else:
+#             maxProfit = max(maxProfit, price - minPrice)
+#     return maxProfit
 
 
 # O(n^2)
 
-
 # def maxProfit(self, prices: [int]) -> int:
 #     maxProfit = 0
-#     i = 0
+#     left = 0
 
-#     while i < len(prices) - 1:
-#         j = i + 1
-#         while j < len(prices):
-#             profit = prices[j] - prices[i]
-#             if profit > maxProfit:
-#                 maxProfit = profit
-#             j += 1
+#     while left < len(prices) - 1:
+#         right = left + 1
 
-#         i += 1
-
+#         while right < len(prices):
+#             current = prices[right] - prices[left]
+#             if current > maxProfit:
+#                 maxProfit = current
+#             right += 1
+#         left += 1
 #     return maxProfit
+
+
+# prices = [7, 6, 4, 3, 1]
+
+# print(maxProfit(None, prices))
