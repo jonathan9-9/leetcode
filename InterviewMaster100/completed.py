@@ -9,9 +9,9 @@ python folders and files.
 # Valid Parentheses
 # Valid Anagram
 # Best Time to Buy and Sell Stock
+# Two Sum
 
 
 # TODO
 
-# Two Sum
 # Valid Palindrome
