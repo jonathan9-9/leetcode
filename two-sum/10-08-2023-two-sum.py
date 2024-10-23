@@ -2,17 +2,19 @@
 
 
 def twoSum(self, nums, target: int) -> [int]:
-    if nums == []:
-        return None
-
-    hashMap = {}
+    hash_map = {}
 
     for i in range(len(nums)):
         complement = target - nums[i]
-        if complement in hashMap and hashMap[complement] != i:
-            return [i, hashMap[complement]]
-        hashMap[nums[i]] = i
+        if complement in hash_map and hash_map[complement] != i:
+            return [hash_map[complement], i]
 
+        hash_map[nums[i]] = i
+
+
+nums = [3, 2, 4]
+target = 6
+print(twoSum(None, nums, target))
 
 # O(n^2)
 
