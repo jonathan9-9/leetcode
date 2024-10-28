@@ -4,14 +4,20 @@ A completed list will be shown below with solutions in their corresponding
 python folders and files.
 """
 
-# *** COMPLETED ***
+# *** COMPLETED (Miscellaneous) ***
 
+# How Many Numbers Are Smaller Than the Current Number
+# Missing number
+# Find All Numbers Disappeared in an Array
+
+# ----------
+
+# *** COMPLETED (Interview Master) ***
 # Valid Parentheses
 # Valid Anagram
 # Best Time to Buy and Sell Stock
 # Two Sum
+# Valid Palindrome
 
 
 # TODO
-
-# Valid Palindrome
