@@ -1,18 +1,13 @@
-def count_ways(n, allowed_steps):
-    if n == 0:
-        return 1
-
-    if n < 0:
-        return 0
-
-    total_ways = 0
-    for step in allowed_steps:
-        total_ways += count_ways(n - step, allowed_steps)
-
-    return total_ways
+# from functools import reduce
+# import math
 
 
-# Example usage:
-n = 4
-allowed_steps = [1, 3]
-print(count_ways(n, allowed_steps))  # Output: 3
+# numbers = [1, 2, 3, 4, 5]
+
+# sum_nums = reduce(lambda x, y: x * y, numbers)
+# cube_nums = list(map(lambda x: int(math.pow(x, 3)), numbers))
+# odd_nums = list(filter(lambda x: x % 2 == 1, numbers))
+
+# print(f"Cube numbers: {cube_nums}")
+# print(f"Odd numbers: {odd_nums}")
+# print(f"Multiply numbers: {sum_nums}")
