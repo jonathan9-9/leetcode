@@ -18,7 +18,7 @@ public class LabProgram {
     public static int[] uniqueRandomInts(int howMany, int maxNum) {
         int i = 0;
         retries = 0; // Initialize static variable
-        Random randGen = new Random(29); // Random number generator with seed 29
+        Random randGen = new Random(); // Random number generator with seed 29
 
         int[] nums = new int[howMany];
         HashSet<Integer> alreadySeen = new HashSet<Integer>();
