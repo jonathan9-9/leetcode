@@ -12,7 +12,8 @@ public class ListNode {
         ListNode prev = null;
 
         while (current != null) {
-            ListNode temp = current.next;
+            ListNode temp = current.next; // temp variable to reference the next node in the list i.e temp points to 2
+                                          // while first node(1) points to prev(null)
             current.next = prev;
             prev = current; // prev points to the first node in the linked list so that in the next
                             // iteration the second node points to the first node in the reverse direction
