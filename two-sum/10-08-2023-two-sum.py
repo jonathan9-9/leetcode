@@ -2,14 +2,14 @@
 
 
 def twoSum(self, nums, target: int) -> [int]:
-    hash_map = {}
+    dict = {}
 
     for i in range(len(nums)):
         complement = target - nums[i]
-        if complement in hash_map and hash_map[complement] != i:
-            return [hash_map[complement], i]
+        if complement in dict and dict[complement] != i:
+            return [dict[complement], i]
 
-        hash_map[nums[i]] = i
+        dict[nums[i]] = i
 
 
 nums = [3, 2, 4]
