@@ -19,7 +19,7 @@ class Solution:
         queue = deque([root])
 
         while queue:
-            # if above is done, also change to current_node = queue.pop(0)
+            # if deque is not used, change to current_node = queue.pop(0)
             current_node = queue.popleft()
 
             current_node.left, current_node.right = (
