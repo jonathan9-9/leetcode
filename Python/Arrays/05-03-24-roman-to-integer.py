@@ -8,7 +8,7 @@ class Solution:
             "C": 100,
             "D": 500,
             "M": 1000,
-        }  # noqa
+        }
         sum = 0
         prev_value = 0
         for i in s[::-1]:
