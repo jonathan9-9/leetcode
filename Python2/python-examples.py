@@ -1,11 +1,8 @@
-# Longer version of enumerate()
-names = ["Alice", "Bob", "Charlie"]
+def reverseString(string):
+    if len(string) <= 1:
+        return string
+    return reverseString(string[1:]) + string[0]
 
-# Manual enumerate implementation
-enumerated_manual = []
-index = 0
-for name in names:
-    enumerated_manual.append((index, name))
-    index += 1
 
-print(enumerated_manual)
+resultStr = "niap"
+print(reverseString(resultStr))
