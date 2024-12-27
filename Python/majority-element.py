@@ -12,6 +12,7 @@ def majorityElement(nums: List[int]) -> int:
 
 
 # iterates through each numbers and its count
+# Example comment
     for num, count in max_freq.items():
         if count > max_count:
             num_most_seen = num
