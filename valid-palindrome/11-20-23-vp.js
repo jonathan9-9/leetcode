@@ -1,8 +1,8 @@
 var isPalindrome = function (s) {
+  if (s === null) return false;
+
   let left = 0;
   let right = s.length - 1;
-
-  if (s == null) return false;
 
   s = s.toLowerCase();
 
