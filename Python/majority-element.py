@@ -7,7 +7,7 @@ def majorityElement(nums: List[int]) -> int:
 
     print(f"Data structure of Counter: {max_freq}")
 
-    max_count = float('inf')
+    max_count = 0
     num_most_seen = 0
 
 
@@ -16,7 +16,8 @@ def majorityElement(nums: List[int]) -> int:
     for num, count in max_freq.items():
         if count > max_count:
             num_most_seen = num
+            max_count = count
     return num_most_seen
 
 
-majorityElement([2, 7, 7, 7, 1, 10, 9, 9])
+print(f"The most frequent element is: {majorityElement([2, 7, 7, 7, 1, 10, 9, 9])}")
