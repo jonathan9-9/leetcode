@@ -9,6 +9,7 @@ class TreeNode:
         self.right = right
 
 
+# breadth first search (BFS) approach to find the depth of a binary tree
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
